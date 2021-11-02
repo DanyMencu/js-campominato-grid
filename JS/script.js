@@ -23,16 +23,25 @@ setBtn.addEventListener('click',() => {
     console.log(gridDimension);
     let cellsNumber;
     let cellsPerSide;
-
+    
     switch (gridDimension) {
         case '1' :
             cellsNumber = 49;
             cellsPerSide = 7;
-        case '2' :
-            cellsNumber = 81;
-            cellsPerSide = 9;
-        case '3' :
-            cellsNumber = 100;
+            case '2' :
+                cellsNumber = 81;
+                cellsPerSide = 9;
+                case '3' :
+                    cellsNumber = 100;
             cellsPerSide = 10;
-    }
-});
+        }
+        console.log(cellsNumber);
+        console.log(cellsPerSide);
+
+        //Gen grid parent
+        const grid = document.createElement('div');
+        grid.classList.add('grid');
+
+        //Add grid
+        wrapGrid.append(grid);
+    });
