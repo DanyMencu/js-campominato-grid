@@ -52,6 +52,10 @@ setBtn.addEventListener('click',() => {
             const square = createGridSquare (cellsPerSide);
             square.innerHTML += `${i}`;
 
+            square.addEventListener('click', function(){
+                this.classList.add('clicked');
+            } )
+
             grid.append(square);
         }
     });

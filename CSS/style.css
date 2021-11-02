@@ -52,7 +52,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto 40px;
-    border: 2px solid #fff;
 }
 
 .square {
