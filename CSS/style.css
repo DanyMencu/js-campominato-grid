@@ -1,6 +1,59 @@
+/* Generals */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+}
+
+body {
+    background-color: #7fffd4;
+    text-align: center;
+}
+
+/* Utilities */
+
+.d-flex {
+    display: flex;
+}
+
+.i-center {
+    align-items: center;
+}
+
+.pr-1 {
+    padding-right: 1rem;
+}
+
+/* Header */
+
+.toolbar {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.toolbar img {
+    width: 60px;
+}
+
+.wrap-grid {
+
+}
+
+/* Main */
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    text-align: left;
+    background-color: #fff;
 }
