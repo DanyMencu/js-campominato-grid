@@ -20,7 +20,6 @@ setBtn.addEventListener('click',() => {
 
     //Set grid dimension
     const gridDimension = levelDifficulty.value;
-    console.log(gridDimension);
     let cellsNumber;
     let cellsPerSide;
     
@@ -37,8 +36,6 @@ setBtn.addEventListener('click',() => {
             cellsNumber = 49;
             cellsPerSide = 7;
         }
-        console.log(cellsNumber);
-        console.log(cellsPerSide);
 
         //Gen grid parent
         const grid = document.createElement('div');
@@ -49,12 +46,11 @@ setBtn.addEventListener('click',() => {
 
         //Gen grid square
         for (let i = 1; i <= cellsNumber; i++) {
-            const square = createGridSquare (cellsPerSide);
-            square.innerHTML += `${i}`;
+            const square = createGridSquare (i, cellsPerSide);
 
-            square.addEventListener('click', function(){
+            square.addEventListener('click', function() {
                 this.classList.add('clicked');
-            } )
+            });
 
             grid.append(square);
         }
@@ -62,11 +58,16 @@ setBtn.addEventListener('click',() => {
 
     //Functions
 
-    function createGridSquare (cells) {
+    function createGridSquare (num, cells) {
         const node = document.createElement('div');
         node.classList.add('square');
         node.style.width = `calc( 100% / ${cells} )`;
         node.style.height = `calc( 100% / ${cells} )`;
+
+        const span = document.createElement('span');
+        span.append(num);
+
+        node.append(span);
 
         return node;
     }
