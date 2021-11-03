@@ -13,17 +13,15 @@ const setBtn = document.querySelector('.set-difficulty');
 const wrapGrid = document.querySelector('.wrap-grid');
 const levelDifficulty = document.getElementById('difficulty');
 
-//Set grid
 setBtn.addEventListener('click',() => {
     //Reset content
     wrapGrid.innerHTML = '';
 
     //Set grid dimension
-    const gridDimension = levelDifficulty.value;
     let cellsNumber;
     let cellsPerSide;
-    
-    switch (gridDimension) {
+
+    switch (levelDifficulty.value) {
         case '1' :
             cellsNumber = 100;
             cellsPerSide = 10;
@@ -44,12 +42,12 @@ setBtn.addEventListener('click',() => {
     //Add grid
     wrapGrid.append(grid);
 
-    //Gen grid square
+    //Gen square
     for (let i = 1; i <= cellsNumber; i++) {
         const square = createGridSquare (i, cellsPerSide);
 
-        square.addEventListener('click', function() {
-            this.classList.add('clicked');
+        square.addEventListener('click', () => {
+            square.classList.add('clicked');
         });
 
         grid.append(square);
@@ -64,10 +62,7 @@ function createGridSquare (num, cells) {
         node.style.width = `calc( 100% / ${cells} )`;
         node.style.height = `calc( 100% / ${cells} )`;
 
-        const span = document.createElement('span');
-        span.append(num);
-
-        node.append(span);
+        node.append(num);
 
         return node;
 }
