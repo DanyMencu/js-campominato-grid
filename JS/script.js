@@ -35,30 +35,30 @@ setBtn.addEventListener('click',() => {
         case '3' :
             cellsNumber = 49;
             cellsPerSide = 7;
-        }
+    }
 
-        //Gen grid parent
-        const grid = document.createElement('div');
-        grid.classList.add('grid');
+    //Gen grid parent
+    const grid = document.createElement('div');
+    grid.classList.add('grid');
 
-        //Add grid
-        wrapGrid.append(grid);
+    //Add grid
+    wrapGrid.append(grid);
 
-        //Gen grid square
-        for (let i = 1; i <= cellsNumber; i++) {
-            const square = createGridSquare (i, cellsPerSide);
+    //Gen grid square
+    for (let i = 1; i <= cellsNumber; i++) {
+        const square = createGridSquare (i, cellsPerSide);
 
-            square.addEventListener('click', function() {
-                this.classList.add('clicked');
-            });
+        square.addEventListener('click', function() {
+            this.classList.add('clicked');
+        });
 
-            grid.append(square);
-        }
-    });
+        grid.append(square);
+    }
+});
 
-    //Functions
+//Functions
 
-    function createGridSquare (num, cells) {
+function createGridSquare (num, cells) {
         const node = document.createElement('div');
         node.classList.add('square');
         node.style.width = `calc( 100% / ${cells} )`;
@@ -70,4 +70,4 @@ setBtn.addEventListener('click',() => {
         node.append(span);
 
         return node;
-    }
+}
